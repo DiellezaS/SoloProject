@@ -1,0 +1,102 @@
+.imgblock {
+
+
+    overflow-y: scroll;
+    height: 100px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
+}
+
+.skillblock {
+    overflow-x: scroll;
+}
+
+.flexing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    height: 70%;
+    resize: none; /* Remove this if you want the user to resize the textarea */
+}
+
+.flexing button {
+    width:60px;
+    height: 65px;
+}
+
+button, img{
+    max-width:100%;
+}
+
+.cardblock{
+    display: inline-block;
+
+}
+
+textarea {
+    height: 100px;
+}
+
+
+
+container-fluid, div {
+    display: inline-block;
+}
+
+.scroll {
+    overflow-y: scroll;
+}
+
+selectdiv {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+
+}
+
+.imgselect {
+    width: 20%;
+}
+
+middle {
+    margin: 0 auto;
+}
+
+.topbar {
+    background-color: #b45f06;
+}
+
+.topbar div {
+    display: inline-block;
+}
+
+.topbar h2 {
+    display: inline-block;
+    color: white;
+}
+
+.rowmap {
+    border: 2px solid black;
+}
+
+.signup {
+    background-color: #dddddd;
+}
+
+.skillbar {
+    background-color: #6fa8dc;
+}
+
+.posback {
+    background-color: #6fa8dc;
+}
+
+h3 {
+    display: inline-block;
+}
+
+.appwhite {
+    background-color: white;
+}
