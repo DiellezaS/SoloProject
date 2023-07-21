@@ -5,7 +5,7 @@
 <html>
 <head>
   <meta charset="ISO-8859-1">
-  <title>Insert title here</title>
+  <title>JobPortal</title>
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -13,7 +13,7 @@
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="background-image: url('images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
@@ -23,7 +23,7 @@
         <h2 class="col-sm-4">
           <c:out value="${org.orgName}"/></h2>
         <h3 class="col-sm-4 text-right">
-          <a href="/orglogin" class="text-right">Logout</a>
+          <a href="/logout" class="text-right">Logout</a>
         </h3>
       </div>
     </div>

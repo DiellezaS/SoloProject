@@ -4,10 +4,11 @@ import com.codingdojo.dielleza.devondeck.models.Organization;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 
 @Repository
 public interface OrganizationRepository extends CrudRepository<Organization, Long> {
 
-    Organization findByEmail(String email);
-
+    Optional<Organization> findByEmail(String email);
 }

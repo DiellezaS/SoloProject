@@ -1,10 +1,7 @@
 package com.codingdojo.dielleza.devondeck.services;
 
 
-import com.codingdojo.dielleza.devondeck.models.Developer;
-import com.codingdojo.dielleza.devondeck.models.Organization;
-import com.codingdojo.dielleza.devondeck.models.Position;
-import com.codingdojo.dielleza.devondeck.models.Skill;
+import com.codingdojo.dielleza.devondeck.models.*;
 import com.codingdojo.dielleza.devondeck.repositories.DeveloperRepository;
 import com.codingdojo.dielleza.devondeck.repositories.OrganizationRepository;
 import com.codingdojo.dielleza.devondeck.repositories.PositionRepository;
@@ -13,8 +10,10 @@ import jakarta.validation.Valid;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MainService {
@@ -30,31 +29,6 @@ public class MainService {
 
     @Autowired
     SkillRepository sRepo;
-
-    public Developer createDev(Developer dev) {
-        String hashed = BCrypt.hashpw(dev.getPassword(), BCrypt.gensalt());
-        dev.setPassword(hashed);
-        return dRepo.save(dev);
-    }
-
-
-
-
-    public void createOrg(@Valid Organization org) {
-
-        String hashed = BCrypt.hashpw(org.getPassword(), BCrypt.gensalt());
-        org.setPassword(hashed);
-        oRepo.save(org);
-    }
-
-
-
-    public Organization findOrgByEmail(String email) {
-
-        return oRepo.findByEmail(email);
-
-    }
-
 
     public Organization findOrgById(Long id) {
         return oRepo.findById(id).orElse(null);
@@ -76,9 +50,7 @@ public class MainService {
     }
 
 
-    public List<Skill> findLanguages() {
-        return sRepo.findAllByLanguageContaining(true);
-    }
+
 
 
     public Developer saveDev(Developer dev) {
@@ -87,13 +59,9 @@ public class MainService {
 
 
     public Developer findDeveloper(Long id) {
-        return dRepo.findById(id).orElse(null);
+        return this.dRepo.findById(id).orElse(null);
     }
 
-
-    public  Developer findDeveloperByEmail(String email) {
-        return dRepo.findByEmail(email);
-    }
 
 
     public List<Position> findAllPositions() {
@@ -115,5 +83,23 @@ public class MainService {
 
         return (List<Developer>) dRepo.findAll();
     }
+
+    public void addSkill(Developer dev, Skill skill){
+        List<Skill> skills=dev.getMyskills();
+        skills.add(skill);
+        dRepo.save(dev);
+}
+
+    public void removeSkill(Developer dev, Skill skill){
+        List<Skill> skills=dev.getMyskills();
+        skills.remove(skill);
+        dRepo.save(dev);
+    }
+
+
+        public Skill find(Long id){
+            return sRepo.findById(id).orElse(null);
+}
+
 
 }

@@ -17,20 +17,14 @@ public class Skill {
     @NotEmpty(message="Skill needs a name")
     private String name;
 
+    private String images;
 
-    private String language;
-
-
-    private String framework;
-
-
-    private String devtool;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "developer_skills",
             joinColumns = @JoinColumn(name = "skill_id"),
             inverseJoinColumns = @JoinColumn(name = "developer_id"))
-    private List<Skill> skilleddevs;
+    private List<Developer> skilleddevs;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "position_skills",
@@ -54,36 +48,19 @@ public class Skill {
         this.name = name;
     }
 
-
-    public String getLanguage() {
-        return language;
+    public String getImages() {
+        return images;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setImages(String images) {
+        this.images = images;
     }
 
-    public String getFramework() {
-        return framework;
-    }
-
-    public void setFramework(String framework) {
-        this.framework = framework;
-    }
-
-    public String getDevtool() {
-        return devtool;
-    }
-
-    public void setDevtool(String devtool) {
-        this.devtool = devtool;
-    }
-
-    public List<Skill> getSkilleddevs() {
+    public List<Developer> getSkilleddevs() {
         return skilleddevs;
     }
 
-    public void setSkilleddevs(List<Skill> skilleddevs) {
+    public void setSkilleddevs(List<Developer> skilleddevs) {
         this.skilleddevs = skilleddevs;
     }
 
@@ -94,8 +71,4 @@ public class Skill {
     public void setSkillsposition(List<Skill> skillsposition) {
         this.skillsposition = skillsposition;
     }
-
-
-
-
 }

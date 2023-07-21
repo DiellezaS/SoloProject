@@ -5,33 +5,37 @@
 <html>
 <head>
   <meta charset="ISO-8859-1">
-  <title>Insert title here</title>
+  <title>Developer Signup</title>
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+   </head>
+<body style="background-image: url('images/back.jpg'); background-size: cover; background-repeat: no-repeat">
 <div class="container-fluid">
   <div class="row">
-    <div class="topbar col-sm-12 col-md-8 rowmap">
-      <h2 class="col-sm-8">DevsOnDeck</h2>
-      <div class="col-sm-3">
-        <a href="/devlogin" class="text-right">Dev Login </a> <a href="/orglogin"> Org
-        Login</a>
+
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="">
+          <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
+          DevsOnDeck
+        </a>
+        <a href="/devlogin" class="text-right navbar-brand">Dev Login</a>
+
+        <a href="/orglogin" class="text-right navbar-brand"> Org Login</a>
+
       </div>
-    </div>
+    </nav>
 
     <div class="card col-md-8 rowmap signup">
       <h1 class="text-center">Developer Sign Up</h1>
       <div class="card-body">
-        <p>
-          <form:errors path="developer.*" />
-        </p>
-        <form:form action="/newdev" method="POST"
-                   modelAttribute="developer">
+
+        <form:form action="/register" method="POST"
+                   modelAttribute="newDev">
           <div class="col-sm-12">
             <form:label path="fname" for="fname" class="col-sm-2 col-md-2">First Name:</form:label>
             <form:input path="fname" class="col-sm-9 col-md-3" />
@@ -61,55 +65,15 @@
             <option value="CO">CO</option>
             <option value="CT">CT</option>
             <option value="DC">DC</option>
-            <option value="DE">DE</option>
-            <option value="FL">FL</option>
-            <option value="GA">GA</option>
-            <option value="HI">HI</option>
-            <option value="IA">IA</option>
-            <option value="ID">ID</option>
-            <option value="IL">IL</option>
-            <option value="IN">IN</option>
-            <option value="KS">KS</option>
-            <option value="KY">KY</option>
-            <option value="LA">LA</option>
-            <option value="MA">MA</option>
-            <option value="MD">MD</option>
-            <option value="ME">ME</option>
-            <option value="MI">MI</option>
-            <option value="MN">MN</option>
-            <option value="MO">MO</option>
-            <option value="MS">MS</option>
-            <option value="MT">MT</option>
-            <option value="NC">NC</option>
-            <option value="ND">ND</option>
-            <option value="NE">NE</option>
-            <option value="NH">NH</option>
-            <option value="NJ">NJ</option>
-            <option value="NM">NM</option>
-            <option value="NV">NV</option>
-            <option value="NY">NY</option>
-            <option value="OH">OH</option>
-            <option value="OK">OK</option>
-            <option value="OR">OR</option>
-            <option value="PA">PA</option>
-            <option value="RI">RI</option>
-            <option value="SC">SC</option>
-            <option value="SD">SD</option>
-            <option value="TN">TN</option>
-            <option value="TX">TX</option>
-            <option value="UT">UT</option>
-            <option value="VA">VA</option>
-            <option value="VT">VT</option>
-            <option value="WA">WA</option>
-            <option value="WI">WI</option>
-            <option value="WV">WV</option>
-            <option value="WY">WY</option>
+
+
+
           </form:select>
 
           <form:label path="password" class="col-sm-2">Password:</form:label>
-          <form:input path="password" class=" col-sm-9" />
+          <form:input type="password" path="password" class=" col-sm-9" />
           <form:label path="passConfirm" class="col-sm-2">Confirm:</form:label>
-          <form:input path="passConfirm" class="col-sm-9" />
+          <form:input type="password" path="passConfirm" class="col-sm-9" />
 
 
           <button type="submit" class="btn btn-success">Register</button>

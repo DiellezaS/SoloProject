@@ -6,7 +6,7 @@
 <html>
 <head>
   <meta charset="ISO-8859-1">
-  <title>Insert title here</title>
+  <title>New Position</title>
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -14,22 +14,21 @@
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">
+      <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
+      DevsOnDeck
+    </a>
+    <h2 class="navbar-brand text-right">
+      <c:out value="${org.orgName}"/>
+    </h2>
+    <a class="navbar-brand text-right" href="/logout">LogOut</a>
+  </div>
+</nav>
+<body style="background-image: url('images/back.jpg'); background-size: cover; background-repeat: no-repeat">
 <div class="container">
   <div class="row rowmap signup">
-    <div class="col-sm-12">
-      <div class="row topbar">
-
-        <h2 class="col-sm-4">
-          <c:out value="${org.orgName}"/>
-        </h2>
-        <h2 class="col-sm-4">DevsOnDeck</h2>
-        <h3 class="col-sm-3 text-right">
-          <a href="/orglogin" class="text-right" class="col-sm-12">Logout</a>
-        </h3>
-
-      </div>
-    </div>
     <h2 class="text-center col-sm-12 skillbar">Add A Position</h2>
     <p>
       <form:errors path="position.*" />
@@ -45,8 +44,6 @@
                       name="title" placeholder="Enter Title" />
         </div>
       </div>
-
-
 
       <div class="form-group row">
         <label for="description" class="col-sm-2 col-form-label">Description:</label>
@@ -64,8 +61,9 @@
                        name="skillz" SIZE="5" multiple="true">
             <c:forEach items="${skills}" var="s">
               <div class="selectdiv">
+                <img style="height: 50px; width: 30%; margin: 0 auto;" src="${s.images}">
                 <form:option
-                        style="background-image:(images/${s.name}.png);
+                        style="background-image:(images/${s.name});
 							 background-position: center; background-repeat: no-repeat; background-size:90% 90%;
 							  height: 70px; width: 70%; margin: 0 auto;"
                         path="posSkills" value="${s.id}" label="${s.name}"

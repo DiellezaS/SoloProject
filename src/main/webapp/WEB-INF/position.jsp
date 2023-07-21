@@ -6,7 +6,7 @@
 <html>
 <head>
   <meta charset="ISO-8859-1">
-  <title>Insert title here</title>
+  <title>Position</title>
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -14,14 +14,22 @@
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 text-center posback">
-      <h3><c:out value="${pos.title}"/></h3>
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">
+      <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
+      DevsOnDeck
+    </a>
+    <a class="navbar-brand" href="/devdashboard">Back</a>
+  </div></nav>
+<body style="background-image: url('images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
+<div class="container">
+  <div class="row bg-success">
+    <div class="col-sm-8 col-md-8 text-center posback ">
+      <h3>Position: <c:out value="${pos.title}"/></h3>
     </div>
-    <div class="col-sm-12 col-md-8 text-center">
-      <h3 class="col-sm-12 text-center"><c:out value="${pos.description}"/></h3>
+    <div class="col-sm-12 col-md-8 text-center ">
+      <h3 class="col-sm-12 text-center">Position Description: <c:out value="${pos.description}"/></h3>
 
       <a href="/apply/${pos.id}"><button type="submit" class="btn btn-success text-center middle col-sm-5">Apply</button></a>
 

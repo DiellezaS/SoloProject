@@ -34,7 +34,7 @@ public class Organization {
     private String email;
 
     @NotEmpty(message="Valid Address is required!")
-    @Size(min=8, max=128, message="Address must be between 2 and 128 characters")
+    @Size(min=2, max=128, message="Address must be between 2 and 128 characters")
     private String address;
 
     @NotEmpty(message = "City must be entered")

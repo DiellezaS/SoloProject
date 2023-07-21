@@ -6,7 +6,7 @@
 <html>
 <head>
   <meta charset="ISO-8859-1">
-  <title>Insert title here</title>
+  <title>Org Log in</title>
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -14,21 +14,22 @@
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="background-image: url('images/back.jpg'); background-size: cover; background-repeat: no-repeat">
 <div class="container-fluid">
   <div class="row">
-    <div class="topbar col-sm-12 col-md-8 rowmap">
-      <h2 class="col-sm-5 col-md-8">DevsOnDeck</h2>
-      <div class="col-sm-6 col-md-3">
-        <div class="col-sm-6">
-          <a href="/devSignup" class="text-right">Dev Registration </a>
-        </div>
-        <div class="col-sm-5 text-right">
-          <a href="/orgSignup"> Org Registraton</a>
-        </div>
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="">
+          <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
+          DevsOnDeck
+        </a>
+        <a href="/register" class="text-right navbar-brand">Dev Registration</a>
+
+        <a href="/orgsignup" class="text-right navbar-brand"> Org Registraton</a>
+
       </div>
-    </div>
-    <div class="card col-md-8 rowmap signup">
+    </nav>
+    <div class="card bg-success  col-md-8 rowmap signup">
       <div>
         <div class="text-center" >
           <h1>Welcome Back!</h1>
@@ -39,25 +40,21 @@
         <p>
           <c:out value="${error}" />
         </p>
-        <form:form action="/orglogin" method="post" modelAttribute="organization">
-
-          <div class=" form-group row">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10 col-md-7">
-              <input type="text" class="form-control" name="email"
-                     placeholder="Enter email">
-            </div>
+        <form:form action="/orglogin" method="post" modelAttribute="loginNew">
+          <div class="d-flex flex-row justify-content-center align-items-center">
+            <p class="col-sm-2">
+              <form:label path="email" class="ms-2 fw-semibold col-form-label fs-2 text">Email</form:label>
+            </p>
+            <form:errors path="email" class="errors text-danger"/>
+            <form:input path="email" type="text" class="form-control"/>
           </div>
-
-          <div class="form-group row">
-            <label for="password" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10 col-md-7">
-              <input type="password" class="form-control" name="password"
-                     placeholder="Enter Password">
-            </div>
+          <div class="d-flex flex-row justify-content-center align-items-center">
+            <p class="col-sm-2">
+              <form:label path="password" class="ms-2 fw-semibold col-form-label fs-2 text">Password</form:label>
+            </p>
+            <form:input path="password" type="password" class="form-control"/>
+            <form:errors path="password" class="errors text-danger"/>
           </div>
-
-
           <button type="submit" class="btn btn-success">Login</button>
         </form:form>
       </div>
