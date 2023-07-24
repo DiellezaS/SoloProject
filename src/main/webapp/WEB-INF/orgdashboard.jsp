@@ -44,13 +44,12 @@
             a New Position</button></a>
         </h3>
         <div class="col-sm-12 rowmap appwhite">
-          <h4 class="text-center signup">Positions To Fill</h4>
+          <h4 class="text-center signup">Positions </h4>
           <c:forEach items="${org.openPositions}" var="p">
             <div class="col-sm-12 text-center "><img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
               <h3>
                 <a href="/applicants/${p.id}">
                   <c:out value="${p.title}" />
-
                 </a>
               </h3>
             </div>
@@ -59,20 +58,20 @@
       </div>
       <div class="col-sm-12 col-md-6 rowmap appwhite">
         <h2 class="signup">Available Devs</h2>
-        <div class="col-sm-10 ">
+        <div class="col-sm-10 card">
           <c:forEach items="${devs}" var="d">
             <table class="col-sm-12 rowmap">
-              <tr style="height: 20px">
+              <tr style="height: 30px">
                 <td class="col-sm-6"><a href=""><c:out
-                        value="${d.fname}" /> <c:out value="${d.lname}" /></a>
+                        value="${d.firstName}" /> <c:out value="${d.lname}" /></a>
                 <td class="col-sm-9"><c:forEach items="${d.myskills}"
                                                 var="s">
-                  <img alt="" src="images/${s.name}.png"
+                  <img alt="" src="/images/${s.name}.png"
                        style="width: 10%; height: 25px;">
                 </c:forEach></td>
               </tr>
               <tr>
-                <td colspan="2" rowspan="2"><p><c:out value="${d.biography}" /></p></td>
+                <td colspan="2" rowspan="2"><p><c:out value="${d.bio}" /></p></td>
               </tr>
             </table>
           </c:forEach>

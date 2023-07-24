@@ -28,32 +28,38 @@
 
             </div>
         </nav>
-                <div class="card custom-background bg-gradient col-md-8 rowmap signup ">
+                <div class="card custom-background bg-gradient  col-md-8 rowmap signup ">
             <h1 class="text-center">Organization Sign Up</h1>
             <div class="card-body">
-                <p>
+<%--                <p>--%>
 <%--                    <form:errors path="organization.*" />--%>
-                </p>
+<%--                </p>--%>
                 <form:form action="/orgsignup" method="POST"
                            modelAttribute="newOrg">
 
                     <form:label path="orgName" class="col-sm-5 col-md-3">Org Name:</form:label>
 
                     <form:input path="orgName" class="col-sm-9" />
+                    <form:errors path="orgName" class=" col-sm-9" />
 
                     <div class="col-sm-12">
-                        <form:label path="fname" for="fname" class="col-sm-2 col-md-2">First Name:</form:label>
-                        <form:input path="fname" class="col-sm-9 col-md-3" />
+                        <form:label path="firstName" for="firstName" class="col-sm-2 col-md-2">First Name:</form:label>
+                        <form:input path="firstName" class="col-sm-9 col-md-3" />
+                        <form:errors path="firstName" class=" col-sm-9 col-md-4" />
                         <form:label path="lname" class="col-sm-2 col-md-2">Last Name:</form:label>
                         <form:input path="lname" class=" col-sm-9 col-md-4" />
+                        <form:errors path="lname" class=" col-sm-9 col-md-4" />
                     </div>
                     <form:label path="email" class="col-sm-2">Email address:</form:label>
                     <form:input path="email" class=" col-sm-9" />
+                    <form:errors path="email" class=" col-sm-9 " />
 
                     <form:label path="address" class="col-sm-2">Address:</form:label>
                     <form:input path="address" class="col-sm-9" />
+                    <form:errors path="address" class=" col-sm-9" />
                     <form:label path="city" class="col-sm-2">City:</form:label>
                     <form:input path="city" class=" col-sm-6" />
+                    <form:errors path="city" class=" col-sm-6" />
 
 
 
@@ -69,15 +75,8 @@
                         <option value="CA">CA</option>
                         <option value="CO">CO</option>
                         <option value="CT">CT</option>
-                        <option value="DC">DC</option>
+                        <option value="DC">EN</option>
                         <option value="DE">DE</option>
-                        <option value="FL">FL</option>
-                        <option value="GA">GA</option>
-                        <option value="HI">HI</option>
-                        <option value="IA">IA</option>
-                        <option value="ID">ID</option>
-                        <option value="IL">IL</option>
-
 
                     </form:select>
 
@@ -91,7 +90,7 @@
 
                     <button type="submit" class="btn btn-success">Register</button>
                 </form:form>
-                <a href="/devSignup" class="text-center">Need to Sign Up an
+                <a href="/register" class="text-center">Need to Sign Up an
                     Developer?</a>
             </div>
         </div>

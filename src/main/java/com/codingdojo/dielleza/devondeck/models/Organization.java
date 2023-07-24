@@ -23,7 +23,7 @@ public class Organization {
 
     @NotEmpty(message="First Name Is Required!")
     @Size(min=3, max=30, message="First Name must be between 3 and 30 characters")
-    private String fname;
+    private String firstName;
 
     @NotEmpty(message="Last Name Is Required!")
     @Size(min=3, max=30, message="Last Name must be between 3 and 30 characters")
@@ -84,12 +84,12 @@ public class Organization {
         this.orgName = orgName;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLname() {

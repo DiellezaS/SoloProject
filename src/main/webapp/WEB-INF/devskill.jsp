@@ -47,13 +47,13 @@
       </div>
       <form:errors path="developer.*" />
       <div class="card-body "></div>
-      <div class="  row rowmap signup">
+      <div class=" ">
         <div class="col-sm-8">
 
-          <label  class="col-sm-5 col-md-5 col-form-label skillblock"><h4>${dev.fname},Pick
+          <label  class="col-sm-5 col-md-5 col-form-label "><h4>${dev.firstName},Pick
             Your Top 5 Languages</h4></label>
 
-          <div class="col-sm-5 scroll">
+          <div class="col-sm-5 "> Selected Languages:
             <c:forEach items="${dev.myskills}" var="s">
               <img style="height: 50px; width: 20%; margin: 0 auto;" src="${s.images}">
 <%--                            <button--%>
@@ -62,8 +62,10 @@
                           </c:forEach>
                         </div>
                       </div>
+          <div class="container col-sm-5 scroll">
         <form:form  action="/addskill"  method="post" modelAttribute="newS">
           <c:forEach items="${skills}" var="s">
+
             <button type="submit" name="skillname" value="${s.id}">
 
              <img class="imgblock " style="height: 70px; width: 50%; margin: 0 auto;" src="${s.images}">
@@ -71,12 +73,13 @@
             </button>
           </c:forEach>
         </form:form>
+          </div>
                       <form:form action="/addBio" method="Post"
                                  modelAttribute="dev">
 
                         <div class=" form-group col-sm-7 ">
                           <div class="row col-sm-9">
-                            <form:hidden path="fname" value="${dev.fname}" />
+                            <form:hidden path="firstName" value="${dev.firstName}" />
                             <form:hidden path="lname" value="${dev.lname}" />
                             <form:hidden path="address" value="${dev.address}" />
                             <form:hidden path="state" value="${dev.state}" />
@@ -87,12 +90,12 @@
 
                               <div class="col-sm-12 ">
                                   <div class="form-group ">
-                                      <label for="biography" class=" col-form-label">Short
-                                          Biography:</label>
+                                      <label for="bio" class=" col-form-label">Short
+                                          Bio:</label>
 
                                       <form:textarea type="textarea" class="form-control"
-                                                     path="biography" name="biography"
-                                                     placeholder="${dev.biography}" style="height: 300px; width:200%" />
+                                                     path="bio" name="bio"
+                                                     placeholder="${dev.bio}" style="height: 300px; width:200%" />
 
                                   </div>
                               </div>
@@ -105,8 +108,7 @@
                         <input type="submit" value="Go to Dashboard"
                                 class="btn btn-success text-center middle col-sm-6">
                         <a href="/devdashboard"><button type="button"
-                                                        class="btn btn-secondary text-center middle col-sm-4">Skip
-                          this step</button></a>
+                                                        class="btn btn-secondary text-center middle col-sm-4">Next step</button></a>
                       </form:form>
 
                     </div>

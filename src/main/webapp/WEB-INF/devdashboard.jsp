@@ -13,11 +13,12 @@
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head >
-<nav class="navbar navbar-dark">
+<nav class="navbar ">
   <div class="container-fluid navbar-dark">
     <a class="navbar-brand" href="">
       <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center ">
-      DevsOnDeck
+      <p class="d-inline-block text-dark"> DevsOnDeck</p>
+
     </a>
     <a class="navbar-brand text-right" href="/logout">LogOut</a>
 
@@ -30,23 +31,27 @@
     <div class="row ">
       <div class="col-sm-12 col-md-3">
         <div class="col-sm-12 rowmap">
-          <h4 class="text-center signup">Organizations</h4>
+          <h4 class="text-center signup">All Organizations</h4>
           <c:forEach items="${orgs}" var="o">
-            <div class="col-sm-12 text-center ">
-              <h4><a href="/organization/${o.id}" >
-                <c:out value="${o.orgName}"/></a></h4>
+            <div class="col-sm-12 text-center card">
+              <h4>
+                <a href="/organization/${o.id}" >
+
+                <c:out value="${o.orgName}"/></a>
+              </h4>
             </div>
           </c:forEach>
         </div>
       </div>
       <div class="col-sm-10  col-md-6 rowmap">
-        <h2 class="signup text-center">Available Positions</h2>
-        <div class="col-sm-12  text-center ">
+        <h2 class="signup text-center">Available Jobs</h2>
+        <div class="col-sm-12 text-center card-header bg-light ">
           <c:forEach items="${positions}" var="p">
 
             <div class="col-sm-7 text-center ">
 
               <a href="/position/${p.id}"  >
+
                 <h4 ><c:out value="${p.title}"/></h4>
               </a>
             </div>
@@ -54,9 +59,9 @@
       </div>
       <div class="col-sm-12 col-md-3 rowmap">
         <div class="col-sm-12">
-          <h4 class="text-center signup">Applied Positions</h4>
+          <h4 class="text-center signup">Applied Jobs</h4>
           <c:forEach items="${dev.applications}" var="a">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-12 text-center card-header card bg-light">
 
               <h4><a href="" ><c:out value="${a.title}"/></a>, <c:out value="${a.organization.orgName}"/></h4>
             </div>

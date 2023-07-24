@@ -13,24 +13,30 @@
           crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body style="background-image: url('images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+    <img src="/images/logo.png"  width="80" height="80" class="d-inline-block align-text-center">
+    <h3 class="navbar-brand "> DevsOnDeck</h3>
+
+
+    <a class="navbar-brand" href="/devdashboard">Back</a>
+  </div></nav>
+<body style="background-image: url('/images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
       <div class="row">
         <div></div>
-        <h2 class="col-sm-4"><c:out value="${dev.fname}"> <c:out value="${dev.lname}"/></c:out></h2>
-        <h2 class="col-sm-4">
-          <c:out value="${org.orgName}"/></h2>
-        <h3 class="col-sm-4 text-right">
-          <a href="/logout" class="text-right">Logout</a>
-        </h3>
+        <h2 class="col-sm-4">Hello,<c:out value="${dev.firstName}"> <c:out value="${dev.lname}"/></c:out></h2>
+        <h2 class="col-sm-9">
+         Welcome to our organization :<c:out value="${org.orgName}"/></h2>
+
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-4">
-        <div class="col-sm-12">
-          <h4 class="text-center">Applied Positions</h4>
+        <div class="col-sm-7">
+          <h4 class="text-center">All Your Applied Positions</h4>
           <c:forEach items="${dev.applications}" var="p">
             <div class="col-sm-12 text-center">
 
@@ -40,7 +46,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
-        <h2>Available Positions</h2>
+        <h2>Our Available Positions</h2>
         <div class="col-sm-12 scroll text-center">
           <c:forEach items="${org.openPositions}" var="p">
             <div class="col-sm-7 text-center">

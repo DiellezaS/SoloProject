@@ -16,7 +16,7 @@
 <nav class="navbar navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="">
-      <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
+      <img src="/images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
       DevsOnDeck
     </a>
     <h2 class="col-sm-4">
@@ -24,7 +24,8 @@
     </h2>
     <a class="navbar-brand text-right" href="/logout">LogOut</a>
   </div></nav>
-<body style="background-image: url('images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
+
+<body style="background-image: url('/images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
 <div class="container-fluid">
   <div class="row">
 <%--      <img style="height: 50px; width: 30%; margin: 0 auto;" src="${pos.images}">--%>
@@ -45,7 +46,7 @@
             <table class="col-sm-12">
               <tr style="height: 20px">
                 <td class="col-sm-3"><a href=""><c:out
-                        value="${d.fname}" /> <c:out value="${d.lname}" /></a>
+                        value="${d.firstName}" /> <c:out value="${d.lname}" /></a>
                 <td class="col-sm-9">
                 <c:forEach items="${d.myskills}" var="s">
                   <img src="${s.images}"
@@ -53,7 +54,7 @@
                 </c:forEach></td>
               </tr>
               <tr>
-                <td colspan="2" rowspan="2"><p><c:out value="${d.biography}" /></p></td>
+                <td colspan="2" rowspan="2"><p><c:out value="${d.bio}" /></p></td>
                 <td>
 
               </tr>

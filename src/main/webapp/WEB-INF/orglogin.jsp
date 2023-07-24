@@ -29,7 +29,7 @@
 
       </div>
     </nav>
-    <div class="card bg-success  col-md-8 rowmap signup">
+    <div class="card  col-md-8 rowmap signup">
       <div>
         <div class="text-center" >
           <h1>Welcome Back!</h1>
@@ -37,9 +37,9 @@
         </div>
         <div class="card-body">
         </div>
-        <p>
-          <c:out value="${error}" />
-        </p>
+<%--        <p>--%>
+<%--          <c:out value="${error}" />--%>
+<%--        </p>--%>
         <form:form action="/orglogin" method="post" modelAttribute="loginNew">
           <div class="d-flex flex-row justify-content-center align-items-center">
             <p class="col-sm-2">

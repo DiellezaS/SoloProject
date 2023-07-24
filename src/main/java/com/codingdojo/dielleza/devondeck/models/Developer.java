@@ -21,7 +21,7 @@ public class Developer {
 
     @NotBlank(message = "First name is required!")
     @Size(min = 2,max = 30, message = "First Name must be between 2 and 30 characters")
-    private String fname;
+    private String firstName;
 
     @NotBlank(message = "Last name is required!")
     @Size(min = 2,max = 30, message = "Last Name must be between 2 and 30 characters")
@@ -47,7 +47,7 @@ public class Developer {
     @Transient
     private String passConfirm;
 
-    private String biography;
+    private String bio;
 
     @Column(updatable = false)
     private Date createdAt;
@@ -85,12 +85,12 @@ public class Developer {
         this.id = id;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLname() {
@@ -160,12 +160,12 @@ public class Developer {
         this.applications = applications;
     }
 
-    public String getBiography() {
-        return biography;
+    public String getBio() {
+        return bio;
     }
 
-    public void setBiography(String biography) {
-        this.biography = biography;
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public List<Skill> getMyskills() {

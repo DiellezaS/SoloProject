@@ -40,7 +40,7 @@ public class MainService {
     }
 
 
-    public Position savePosition(@Valid Position position) {
+    public Position savePosition( Position position) {
         return pRepo.save(position);
     }
 

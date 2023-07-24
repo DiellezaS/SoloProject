@@ -36,36 +36,40 @@
     <form:form action="/newPosition" method="POST"
                modelAttribute="position">
 
-      <div class=" form-group row ">
+      <div class=" form-group row card " style="width: 40%">
         <form:label for="title" path="title"
-                    class="col-sm-2 col-form-label">Title:</form:label>
-        <div class="col-sm-10 col-md-7" >
+                    class="col-sm-2 col-form-label ">Title:</form:label>
+        <div class="col-sm-10 col-md-7 " >
           <form:input type="text" class="form-control appwhite" path="title"
                       name="title" placeholder="Enter Title" />
         </div>
       </div>
 
-      <div class="form-group row">
-        <label for="description" class="col-sm-2 col-form-label">Description:</label>
+      <div class="form-group row card" style="width: 40%">
+        <label for="description">Description:</label>
         <div class="col-sm-10 col-md-7">
           <form:input type="textarea" class="form-control appwhite"
                       path="description" name="description"
-                      placeholder="Enter Details, task and requirements for the position" />
+                      placeholder="Enter Details" />
         </div>
       </div>
-      <div class="form-group row ">
+      <div class="form-group row card" style="width: 40% ;height: 55%">
         <label for="posSkills" class="col-sm-2 col-form-label">Skills:</label>
-        <div class="col-sm-7 col-md-7">
+        <div class="col-sm-3 col-md-12">
 
           <form:select class="col-sm-7 selectdiv appwhite" path="posSkills"
-                       name="skillz" SIZE="5" multiple="true">
+                       name="skillz" SIZE="3" multiple="true">
             <c:forEach items="${skills}" var="s">
-              <div class="selectdiv">
-                <img style="height: 50px; width: 30%; margin: 0 auto;" src="${s.images}">
+              <div>
+                <img style="height: 50px; width: 20%; margin: 0 auto;" src="${s.images}">
+
+              <%--                <img style="height: 50px; width: 30%; margin: 0 auto;" src="${s.images}">--%>
                 <form:option
-                        style="background-image:(images/${s.name});
-							 background-position: center; background-repeat: no-repeat; background-size:90% 90%;
-							  height: 70px; width: 70%; margin: 0 auto;"
+
+                        
+                        style="background-image:(${s.images});
+							 background-position: center; background-size:50%;
+							  height: 80px; width: 60%; margin: 0 auto;"
                         path="posSkills" value="${s.id}" label="${s.name}"
                         class="col-sm-3 text-center" />
               </div>

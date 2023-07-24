@@ -154,8 +154,8 @@ public class MainController {
     public String newPosition(@ModelAttribute("position") Position pos, HttpSession session, Model model) {
         Long userId = (Long) session.getAttribute("userId");
         Organization org = service.findOrgById(userId);
-        List<Skill> skills = service.findAllSkills();
-        model.addAttribute("skills", skills);
+//        List<Skill> skills = service.findAllSkills();
+        model.addAttribute("skills", service.findAllSkills());
 
         return "newPosition";
     }
@@ -214,8 +214,6 @@ public class MainController {
                 service.addSkill(developer1,skill);
             }
         }
-//        developer1.setMyskills(developer1.getMyskills());
-//        service.addSkill(developer1,skill);
         return "redirect:/devskills";
     }
 
@@ -226,8 +224,8 @@ public class MainController {
     @PostMapping("/addBio")
     public String addSkills(@ModelAttribute("dev")Developer dev, HttpSession session){
         Developer developer= service.findDeveloper((Long) session.getAttribute("userId"));
-        developer.setBiography(dev.getBiography());
-        developer.setBiography(dev.getBiography());
+        developer.setBio(dev.getBio());
+        developer.setBio(dev.getBio());
 //        developer.setMyskills(skillname);
         service.saveDev(developer);
         return "redirect:/devdashboard";
@@ -258,23 +256,6 @@ public class MainController {
         model.addAttribute("dev", dev);
         return "orgJobPortal";
     }
-
-//    @GetMapping("/devtool")
-//    public String devtools( Model model,HttpSession session) {
-//        if (session.getAttribute("userId")==null){
-//            return "redirect:/devlogin";
-//        }
-//        Long userId= (Long) session.getAttribute("userId");
-//        Developer dev = service.findDeveloper(userId);
-//        List<Skill> skills = service.findAllSkills();
-//        List<Skill> frameworks = new ArrayList<Skill>();
-//
-//        model.addAttribute("dev", dev);
-//        model.addAttribute("frameworks",frameworks);
-//        return "devskill";
-//    }
-
-
     @GetMapping("/position/{id}")
     public String position(@ModelAttribute("developer")Developer dev,Model model,@PathVariable("id")Long id,HttpSession session) {
         Position pos = service.findPosition(id);

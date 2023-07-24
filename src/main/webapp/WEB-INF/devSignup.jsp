@@ -37,8 +37,8 @@
         <form:form action="/register" method="POST"
                    modelAttribute="newDev">
           <div class="col-sm-12">
-            <form:label path="fname" for="fname" class="col-sm-2 col-md-2">First Name:</form:label>
-            <form:input path="fname" class="col-sm-9 col-md-3" />
+            <form:label path="firstName" for="firstName" class="col-sm-2 col-md-2">First Name:</form:label>
+            <form:input path="firstName" class="col-sm-9 col-md-3" />
             <form:label path="lname" class="col-sm-2 col-md-2">Last Name:</form:label>
             <form:input path="lname" class=" col-sm-9 col-md-4" />
           </div>
@@ -78,7 +78,7 @@
 
           <button type="submit" class="btn btn-success">Register</button>
         </form:form>
-        <a href="/orgSignup" class="text-center">Need to Sign Up an
+        <a href="/orgsignup" class="text-center">Need to Sign Up an
           Organization?</a>
       </div>
     </div>

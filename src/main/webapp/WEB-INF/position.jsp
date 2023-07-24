@@ -16,20 +16,22 @@
 </head>
 <nav class="navbar navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">
-      <img src="images/logo.png" alt="" width="80" height="80" class="d-inline-block align-text-center">
-      DevsOnDeck
-    </a>
+    <img src="/images/logo.png"  width="80" height="80" class="d-inline-block align-text-center">
+    <p class="block text-dark"> DevsOnDeck</p>
+
+
     <a class="navbar-brand" href="/devdashboard">Back</a>
   </div></nav>
-<body style="background-image: url('images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
-<div class="container">
-  <div class="row bg-success">
-    <div class="col-sm-8 col-md-8 text-center posback ">
+<body style="background-image: url('/images/sk.jpg'); background-size: cover; background-repeat: no-repeat">
+<div class="container ">
+  <div class="row bg-secondary">
+    <div class=" col-md-8 text-center">
+      <h3>This job position is from: <c:out value="${pos.organization.orgName}"/> </h3>
       <h3>Position: <c:out value="${pos.title}"/></h3>
+
     </div>
     <div class="col-sm-12 col-md-8 text-center ">
-      <h3 class="col-sm-12 text-center">Position Description: <c:out value="${pos.description}"/></h3>
+      <h3 class="col-sm-18 text-center">Job Description: <c:out value="${pos.description}"/></h3>
 
       <a href="/apply/${pos.id}"><button type="submit" class="btn btn-success text-center middle col-sm-5">Apply</button></a>
 

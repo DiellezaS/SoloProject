@@ -18,7 +18,7 @@ public class Position {
     private Long id;
 
     @NotEmpty(message="Enter a title!")
-    @Size(min =3,  message = "Title must be at least 3 characters long")
+    @Size(min =1,  message = "Title must be at least 1 characters long")
     private String title;
 
     @NotEmpty(message="Job Description is needed")

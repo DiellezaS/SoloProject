@@ -4,10 +4,10 @@
     height: 50px;
     resize: none;
 }
-
-.skillblock {
-    overflow-x: scroll;
+.scroll {
+    overflow-y: scroll;
 }
+
 
 .flexing{
     display: flex;
@@ -19,10 +19,7 @@
     resize: none;
 }
 
-.flexing button {
-    width:60px;
-    height: 65px;
-}
+
 
 button, img{
     max-width:50%;
@@ -33,9 +30,6 @@ button, img{
 
 }
 
-textarea {
-    height: 100px;
-}
 
 
 
@@ -43,8 +37,9 @@ container-fluid, div {
     display: inline-block;
 }
 
-.scroll {
-    overflow-y: scroll;
+.flexing button {
+    width:60px;
+    height: 65px;
 }
 
 selectdiv {
@@ -85,5 +80,9 @@ h3 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Additional customization */
+
+}
+
+textarea {
+    height: 100px;
 }
